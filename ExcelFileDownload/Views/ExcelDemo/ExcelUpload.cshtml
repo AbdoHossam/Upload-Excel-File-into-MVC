@@ -1,0 +1,30 @@
+﻿<div align="center">
+    @if (ViewBag.Message != null)
+    {
+        <span class="alert alert-warning"> @ViewBag.Message</span>
+    }
+
+    <div align="right" class="btn btn-default">
+        @using (Html.BeginForm("UploadExcel", "ExcelDemo", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+        {
+            <input type="file" id="fileUpload" class="btn btn-primary" name="FileUpload" /><br />
+            <input type="submit" class="btn btn-primary" name="UploadNewEmployee" id="fileUploadExcel" value="Upload New Employee Details" />
+        }
+    </div>
+</div>  
+<link href="~/Scripts/sweetalert.css" rel="stylesheet" />
+<script src="~/Scripts/jquery-1.10.2.js"></script>
+<script src="~/Scripts/sweetalert.js"></script>
+<script>
+
+
+    $('#fileUploadExcel').click(function (e) {
+        if ($('#fileUpload').val() === "")
+        {
+            sweetAlert("Oops...!!!", "Please select file", "error");
+            return false;
+        }
+
+    });
+
+</script>  

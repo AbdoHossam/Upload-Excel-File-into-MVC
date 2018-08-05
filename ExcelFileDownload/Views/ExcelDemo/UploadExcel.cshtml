@@ -1,0 +1,14 @@
+﻿@model
+@{
+    ViewBag.Title = "UploadExcel";
+}
+
+<h2>UploadExcel</h2>
+@foreach (var item in Model)
+{
+        <div class="col-lg-4 col-md-4">
+            <label>@item</label>
+            <input type="checkbox" class="checkbox" name="SelectEmp" value="@item" />
+        </div>
+ 
+}
